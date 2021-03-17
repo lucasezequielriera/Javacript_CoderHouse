@@ -94,7 +94,7 @@ else if ((nombre && apellido) && (pais == "Argentina" && ciudad == "Buenos Aires
 */
 
 
-// Ciclos / Iteraciones //
+/* // Ciclos / Iteraciones //
 
 alert("Bienvenido! Para ganar tienes que elegir un número del 1 al 10 y que éste coincida con el número aleatorio que generará la PC, estás listo/a?");
 let conteo = 0;
@@ -128,4 +128,102 @@ conteo = conteo + 1;
 console.log(`El número de intentos fué de: ${conteo}`);
 
 
-// Faltaría agregar la función de repetir que aún no la vimos, y por lo que busqué, se utiliza como impresión de una parte del "for"
+// Faltaría agregar la función de repetir que aún no la vimos, y por lo que busqué, se utiliza como impresión de una parte del "for" */
+
+// Funciones Relacionadas //
+
+// Función que saca la retención del sueldo bruto //
+alert("FUNCION 1: Sacar Sueldo Neto a partir del Bruto");
+
+let sueldo_bruto = 0;
+let retencion = 0.3;
+let sueldo_neto = 0;
+let intentos; 
+
+function calc_sueldo_neto() {
+
+    for(let i=1; i<4; i++) {
+
+    sueldo_bruto = Number(prompt("Cuanto cobrás en bruto?"));
+    if (sueldo_bruto == "") {
+        alert("Debes escribir algo (Intentos: 3)");
+    }
+    else {
+        break;
+    }
+    if (i==3) {
+        intentos = "Has superado el número de intentos permitidos";
+        return intentos;
+    }
+
+    }
+    iva = 0.21;
+    sueldo_neto = sueldo_bruto - (sueldo_bruto * retencion);
+    sueldo_neto = `Tu sueldo neto es de: ${sueldo_neto}`;
+    return sueldo_neto;
+}
+
+alert(calc_sueldo_neto());
+
+// Calculadora Cíclica //
+alert("FUNCION 2: Calculadora de Operaciones: + , - , * , /");
+
+let numero1 = 0;
+let numero2 = 0;
+let resultado;
+let operacion;
+let mensaje_de_error;
+
+function op_matematica() {
+    numero1 = Number(prompt("Indica el primer número"));
+    operacion = prompt("Indica que operacion quieres hacer (+ , - , * , /");
+    numero2 = Number(prompt("Indica el segundo número"));
+        if (operacion == "+") {
+            resultado = `El resultado de la suma es: ${numero1 + numero2}`;
+        }
+        else if (operacion == "-") {
+            resultado = `El resultado de la resta es: ${numero1 - numero2}`;
+        }
+        else if (operacion == "*") {
+            resultado = `El resultado de la multiplicación es: ${numero1 * numero2}`;
+        }
+        else if (operacion == "/") {
+            resultado = `El resultado de la división es: ${numero1 / numero2}`;
+        }
+        else {
+            mensaje_de_error = "El comando no es válido, vuelve a intentarlo nuevamente...";
+            return mensaje_de_error;
+        }
+        if (numero1 == "" || numero2 == "" || (operacion == null)) {
+            falta_numero = "No has indicado algun valor, vuelve a intentarlo";
+            return falta_numero;
+        }
+    return resultado;
+}
+
+alert(op_matematica());
+
+// Saber si un número es múltiplo //
+alert("FUNCION 3: Saber si los números son múltiplos");
+
+let multiplo_1 = 0;
+let multiplo_2 = 0;
+let resultado_multiplos;
+
+function multiplo() {
+    let multiplo_1 = Number(prompt("Elige el primer número a comparar"));
+    let multiplo_2 = Number(prompt("Elige el segundo número a comparar"));
+    let resultado_multiplos = multiplo_1 % multiplo_2;
+    if (resultado_multiplos == 0) {
+        resultado_multiplos = "Los números ingresados son múltiplos!";
+    }
+    else if (isNaN(multiplo_1) || isNaN(multiplo_2)) {
+        resultado_multiplos = "Algun dato ingresaste mal";
+    }
+    else {
+        resultado_multiplos = "Los números ingresados no son múltiplos";
+    }
+    return resultado_multiplos;
+}
+
+alert(multiplo());
