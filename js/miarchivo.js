@@ -128,7 +128,7 @@ conteo = conteo + 1;
 console.log(`El número de intentos fué de: ${conteo}`);
 
 
-// Faltaría agregar la función de repetir que aún no la vimos, y por lo que busqué, se utiliza como impresión de una parte del "for" */
+// Faltaría agregar la función de repetir que aún no la vimos, y por lo que busqué, se utiliza como impresión de una parte del "for"
 
 // Funciones Relacionadas //
 
@@ -227,3 +227,22 @@ function multiplo() {
 }
 
 alert(multiplo());
+*/
+
+// Arrays // (Ordenar)
+
+const peliculas = ["Hola", "Lucas", "Che"];
+const numeros = [3, 4, 7, 3, 5, 8, 9, 0, 1, 4, 3, 5, 7, 4, 6, 3];
+
+function ordenandoArrays() {
+    console.log(`Estos son las películas desordenandas: ${peliculas}`);
+    peliculasOrdenadas = peliculas.sort();
+    console.log(`Estas son las peliculas ordenandas alfabéticamente: ${peliculasOrdenadas}`);
+    console.log(`Estos son los números desordenados: ${numeros}`);
+    numerosOrdenados = numeros.sort();
+    console.log(`Estos son los números ordenados de menor a mayor: ${numerosOrdenados}`);
+    numerosOrdenadosDec = numeros.reverse();
+    console.log(`Estos son los números ordenados de mayor a menor: ${numerosOrdenadosDec}`);
+}
+
+ordenandoArrays();
