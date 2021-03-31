@@ -227,7 +227,6 @@ function multiplo() {
 }
 
 alert(multiplo());
-*/
 
 // Arrays // (Ordenar)
 
@@ -246,3 +245,38 @@ function ordenandoArrays() {
 }
 
 ordenandoArrays();
+*/
+
+// Utilizando DOM //
+
+document.getElementById("nombreDeActividad").innerHTML = "Utilizando DOM con getElementByID";
+subtitulo = document.querySelector(".subtitulo");
+subtitulo.innerHTML = "Utilizando querySelector"
+subtitulo.innerHTML += " con JS"
+otroTitulo = document.getElementsByClassName("otrotitulo")[0].innerHTML = "Tambien utilizando getElementsByClassName"
+
+// Utilizar textContent (solo trae el contenido de los nodos, tipo texto) --> más conveniente que innerHTML (trae todo lo que haya asi tal cual de HTML) //
+
+// Creando un div entero con DOM //
+const divElement = document.createElement("div");
+divElement.classList.add("text-center", "mt-2");
+
+const h1 = document.createElement("h1");
+h1.textContent = "Esto es un texto creado con 'createElement' dentro de un div creado en JS ";
+
+const p = document.createElement("p");
+p.textContent = "Esto es un texto creado con DOM en <p>";
+
+// Unir todo el div //
+
+divElement.appendChild(h1); // appendChild coloca al final del "div"
+divElement.appendChild(p);
+
+// Colocar en HTML a su elemento padre (body) //
+
+const contenedor = document.querySelector("body");
+contenedor.appendChild(divElement);
+
+// Eliminar elementos del DOM //
+   // p.remove();
+   // contenedor.removeChild();

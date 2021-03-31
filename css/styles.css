@@ -23,6 +23,22 @@ h1,h2 {
     margin: 5px;
 }
 
-h2 {
+h1, h2, h3, h4 {
     font-weight: 300;
+    margin: 5px;
+}
+
+.mt-2 {
+    border: 1px solid transparent;
+    padding: 10px;
+    box-shadow: 10px 10px 10px rgb(185, 185, 185);
+    margin-top: 10%;
+}
+
+.mt-2 p, {
+    font-weight: 200;
+}
+
+.mt-2 h1 {
+    font-weight: 200;
 }
